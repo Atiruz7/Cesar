@@ -11,10 +11,18 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex md:items-center md:space-x-8">
                 <a href="#inicio" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="#eventos" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Eventos</a>
                 <a href="#libro" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Libro</a>
                 <a href="#videos" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Videos</a>
                 <a href="#blog" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Blog</a>
                 <a href="#contacto" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
+            </div>
+
+            <!-- Login Button -->
+            <div class="hidden md:flex md:items-center md:space-x-4">
+                <a href="{{ route('login') }}" class="btn-primary p-2" aria-label="Acceso Admin">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </a>
             </div>
 
             <!-- Desktop Social Icons -->
@@ -43,10 +51,14 @@
         <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="md:hidden py-4 border-t border-gray-100">
             <div class="flex flex-col space-y-4">
                 <a href="#inicio" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Inicio</a>
+                <a href="#eventos" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Eventos</a>
                 <a href="#libro" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Libro</a>
                 <a href="#videos" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Videos</a>
                 <a href="#blog" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Blog</a>
                 <a href="#contacto" @click="mobileMenuOpen = false" class="text-sm font-medium text-gray-700 hover:text-blue-600 px-2 py-2">Contacto</a>
+                <a href="{{ route('login') }}" @click="mobileMenuOpen = false" class="btn-primary text-center mt-4 px-4 py-2" aria-label="Acceso Admin">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </a>
                 <div class="flex space-x-6 pt-4 border-t border-gray-100">
                     <a href="https://web.facebook.com/profile.php?id=61576606527153" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" aria-label="Facebook">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>

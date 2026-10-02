@@ -26,7 +26,9 @@ class EventController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:events,slug',
             'description' => 'nullable|string',
+            'video_url' => 'nullable|url|max:500',
             'event_date' => 'required|date',
             'is_active' => 'boolean',
             'images.*' => 'nullable|image|max:2048',
@@ -34,7 +36,9 @@ class EventController extends Controller
 
         $event = Event::create([
             'title' => $validated['title'],
+            'slug' => $validated['slug'] ?? Str::slug($validated['title']) . '-' . uniqid(),
             'description' => $validated['description'],
+            'video_url' => $validated['video_url'] ?? null,
             'event_date' => $validated['event_date'],
             'is_active' => $request->boolean('is_active'),
         ]);
@@ -54,6 +58,12 @@ class EventController extends Controller
             ->with('success', 'Evento creado correctamente');
     }
 
+    public function show(Event $event)
+    {
+        $event->load('images');
+        return view('events.show', compact('event'));
+    }
+
     public function edit(Event $event)
     {
         $event->load('images');
@@ -64,7 +74,9 @@ class EventController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:events,slug,' . $event->id,
             'description' => 'nullable|string',
+            'video_url' => 'nullable|url|max:500',
             'event_date' => 'required|date',
             'is_active' => 'boolean',
             'images.*' => 'nullable|image|max:2048',
@@ -74,7 +86,9 @@ class EventController extends Controller
 
         $event->update([
             'title' => $validated['title'],
+            'slug' => $validated['slug'] ?? Str::slug($validated['title']) . '-' . $event->id,
             'description' => $validated['description'],
+            'video_url' => $validated['video_url'] ?? null,
             'event_date' => $validated['event_date'],
             'is_active' => $request->boolean('is_active'),
         ]);

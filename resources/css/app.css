@@ -4,15 +4,146 @@
 
 @layer components {
     .btn-primary {
-        @apply inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors;
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-lg
+               bg-gradient-to-r from-blue-600 to-blue-700
+               hover:from-blue-700 hover:to-blue-800
+               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+               shadow-sm hover:shadow-md
+               transition-all duration-200 ease-in-out
+               disabled:opacity-50 disabled:cursor-not-allowed;
     }
 
     .btn-secondary {
-        @apply inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors;
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-gray-700 rounded-lg
+               bg-white border border-gray-300
+               hover:bg-gray-50 hover:border-gray-400
+               focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+               shadow-sm hover:shadow-md
+               transition-all duration-200 ease-in-out;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-lg
+               bg-gradient-to-r from-red-600 to-red-700
+               hover:from-red-700 hover:to-red-800
+               focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2
+               shadow-sm hover:shadow-md
+               transition-all duration-200 ease-in-out;
+    }
+
+    .btn-success {
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-lg
+               bg-gradient-to-r from-green-600 to-green-700
+               hover:from-green-700 hover:to-green-800
+               focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
+               shadow-sm hover:shadow-md
+               transition-all duration-200 ease-in-out;
     }
 
     .btn-outline {
-        @apply inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors;
+        @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 rounded-lg
+               bg-transparent border border-gray-300
+               hover:bg-gray-50 hover:border-gray-400
+               focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+               transition-all duration-200 ease-in-out;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 rounded-lg
+               hover:bg-gray-100 hover:text-gray-900
+               focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+               transition-all duration-200 ease-in-out;
+    }
+
+    .btn-amazon {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-bold tracking-wide text-white rounded-lg
+               bg-gradient-to-r from-amazon-500 to-amazon-600
+               hover:from-amazon-600 hover:to-amazon-700
+               focus:outline-none focus:ring-2 focus:ring-amazon-500 focus:ring-offset-2
+               shadow-lg hover:shadow-xl
+               transition-all duration-200 ease-in-out;
+    }
+
+    .link-button {
+        @apply inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-800
+               transition-colors duration-150;
+    }
+
+    .link-danger {
+        @apply inline-flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-800
+               transition-colors duration-150;
+    }
+
+    .table-action-btn {
+        @apply inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-md
+               transition-all duration-150;
+    }
+
+    .table-action-edit {
+        @apply text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-800;
+    }
+
+    .table-action-delete {
+        @apply text-red-600 bg-red-50 hover:bg-red-100 hover:text-red-800;
+    }
+
+    .table-action-view {
+        @apply text-green-600 bg-green-50 hover:bg-green-100 hover:text-green-800;
+    }
+
+    .status-badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .status-active {
+        @apply bg-green-100 text-green-800;
+    }
+
+    .status-inactive {
+        @apply bg-gray-100 text-gray-800;
+    }
+
+    .status-pending {
+        @apply bg-yellow-100 text-yellow-800;
+    }
+
+    .card {
+        @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden
+               hover:shadow-md transition-shadow duration-200;
+    }
+
+    .card-header {
+        @apply px-6 py-4 border-b border-gray-100 bg-gray-50;
+    }
+
+    .card-body {
+        @apply p-6;
+    }
+
+    .input-field {
+        @apply block w-full px-4 py-2.5 text-sm text-gray-900 bg-white
+               border border-gray-300 rounded-lg
+               placeholder:text-gray-400
+               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+               transition-all duration-150;
+    }
+
+    .input-label {
+        @apply block text-sm font-medium text-gray-700 mb-1.5;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .dropdown-menu {
+        @apply absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100
+               py-1 z-50;
+    }
+
+    .dropdown-item {
+        @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900
+               transition-colors duration-150;
     }
 }
 
@@ -34,5 +165,36 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+    }
+
+    .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: #d1d5db transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background-color: #9ca3af;
+    }
+}
+
+/* Amazon brand colors */
+@layer base {
+    :root {
+        --color-amazon-500: #FF9900;
+        --color-amazon-600: #FF8F00;
     }
 }

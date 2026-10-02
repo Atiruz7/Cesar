@@ -6,7 +6,6 @@
     <meta name="description" content="{{ $description ?? 'César Díaz - Conferencista, Autor y Coach de Liderazgo' }}">
     <title>{{ $title ?? config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,6 +24,7 @@
                     <h4 class="font-semibold mb-4">Enlaces</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#eventos" class="hover:text-white transition">Eventos</a></li>
                         <li><a href="#libro" class="hover:text-white transition">Libro</a></li>
                         <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
                     </ul>

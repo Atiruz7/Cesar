@@ -9,7 +9,9 @@ class Event extends Model
 {
     protected $fillable = [
         'title',
+        'slug',
         'description',
+        'video_url',
         'event_date',
         'is_active',
     ];
@@ -22,5 +24,10 @@ class Event extends Model
     public function images(): HasMany
     {
         return $this->hasMany(EventImage::class)->orderBy('order');
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }
